@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 10px;
     /* px 表示“像素（pixel）”: 基础字号为 10 像素 */
@@ -22,10 +26,11 @@ html {
 }
 
 body {
-    width: 600px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 650px;
+    margin: 24px auto;
     background-color: #a5ee88;
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 20px;
     border: 5px solid black;
 }
 
@@ -38,5 +43,7 @@ h1 {
 
 img {
     display: block;
+    max-width: 100%;
+    height: auto;
     margin: 0 auto;
 }
