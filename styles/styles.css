@@ -47,3 +47,65 @@ img {
     height: auto;
     margin: 0 auto;
 }
+
+#name-form {
+    margin-top: 24px;
+}
+
+#name-form lable {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+#name-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#name-form button {
+    margin-top: 12px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #fb06123f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#name-input:focus-visible,
+#name-form button:focus-visible {
+    outline: 3px solid #246562;
+    outline-offset: 3px;
+}
+
+#name-message {
+    min-height: 24px;
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#image-switcher {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 8px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#image-switcher:hover {
+    border-color: #06217c;
+}
+
+#image-switcher:focus-visible {
+    outline: 3px solid #2457d6;
+    outline-offset: 3px;
+}

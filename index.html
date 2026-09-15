@@ -15,7 +15,9 @@
         <!--src(源)属性，包含嵌入图片的路径-->
         <!--alt属性，用于当图像不能被用户看见时显示-->
         <h1>欢迎来到我的第一个网页</h1>
-        <img src="images/google.png" alt="My test google images" />
+        <button type="button" id="image-switcher" aria-lable="切换图片">
+            <img id="brand-image" src="images/google.png" alt="Google 标志" />
+        </button>
         <p>这是一个段落</p>
         <p lang="en">At Mozilla, we're a global community of</p>
         <ul lang="en">
@@ -32,8 +34,14 @@
 
         <p lang="en">Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a>
             to learn even more about the values and principles that guide the pursuit of our mission.</p>
-
-        <button type="button">设置 / 更换姓名</button>
+        <!--添加姓名表单form -->
+        <form id="name-form">
+            <label for="name-input">你的姓名</label>
+            <input type="text" id="name-input" name="username" placeholder="例如：小明" maxlength="20"
+                autocomplete="nickname" aria-describedby="name-message" />
+            <button type="submit">保存姓名</button>
+            <p id="name-message" aria-live="polite"></p>
+        </form>
     </main>
     <!-- 放在内容之后，让脚本执行时能找到前面的元素。 -->
     <script src="scripts/main.js"></script>
