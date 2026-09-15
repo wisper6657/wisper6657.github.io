@@ -9,26 +9,32 @@ myImage.onclick = () => {
     }
 };
 
-let myButton = document.querySelector("button")
-let myHeading = document.querySelector("h1")
+const myButton = document.querySelector("button");
+const myHeading = document.querySelector("h1");
 
 function setUserName() {
-    const myName = prompt("Place enter you name.");
-    if (!myName) {
-        setUserName();
-    } else {
-        localStorage.setItem("name", myName);
-        myHeading.textContent = `Mozilla is coll,${myName}`;
+    const input = prompt("请输入你的姓名：");
+
+    // “取消”返回 null。提前结束函数，保留原来的姓名。
+    if (input === null) {
+        return;
     }
+
+    const myName = input.trim();
+    if (myName === "") {
+        return;
+    }
+
+    localStorage.setItem("name", myName);
+    myHeading.textContent = `欢迎你，${myName}！`;
 }
 
-if (!localStorage.getItem("name")) {
-    setUserName();
-} else {
-    const storeName = localStorage.getItem("name");
-    myHeading.textContent = `Mozilla is coll,${storeName}`;
+// 初次访问显示默认标题，用户点击按钮后才询问姓名。
+const storedName = localStorage.getItem("name");
+if (storedName) {
+    myHeading.textContent = `欢迎你，${storedName}！`;
 }
 
 myButton.onclick = function () {
     setUserName();
-}
+};

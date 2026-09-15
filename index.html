@@ -1,37 +1,42 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="zh-CN">
 
 <head>
-    <link rel="stylesheet" href="styles/styles.css">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>My First Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>我的第一个网页</title>
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 </head>
 
 <body>
-    <!--src(源)属性，包含嵌入图片的路径-->
-    <!--alt属性，用于当图像不能被用户看见时显示-->
-    <h1>这是我的google照片</h1>
-    <img src="images/google.png" alt="My test google images" />
-    <p>这是一个段落</p>
-    <p>At Mozilla, we're a global conmmunity of</p>
-    <ul>
-        <!--ol有序列表、ul无序列表-->
-        <li>technologists</li>
-        <li>thinkers</li>
-        <li>builders</li>
-    </ul>
-    <p>orking together to keep the Internet alive and accessible, so people worldwide can be informed contributors and
-        creators of the Web.
-        We believe this act of human collaboration across an open platform is essential to individual growth and our
-        collective future.</p>
+    <!-- main 表示本页的主要内容；标签负责描述内容的含义。 -->
+    <main>
+        <!--src(源)属性，包含嵌入图片的路径-->
+        <!--alt属性，用于当图像不能被用户看见时显示-->
+        <h1>欢迎来到我的第一个网页</h1>
+        <img src="images/google.png" alt="My test google images" />
+        <p>这是一个段落</p>
+        <p lang="en">At Mozilla, we're a global community of</p>
+        <ul lang="en">
+            <!--ol有序列表、ul无序列表-->
+            <li>technologists</li>
+            <li>thinkers</li>
+            <li>builders</li>
+        </ul>
+        <p lang="en">Working together to keep the Internet alive and accessible, so people worldwide can be informed
+            contributors and
+            creators of the Web.
+            We believe this act of human collaboration across an open platform is essential to individual growth and our
+            collective future.</p>
 
-    <p>Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a>
-        to learn even more about ther values and principles that guide the pursuit of our mission.</p>
+        <p lang="en">Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a>
+            to learn even more about the values and principles that guide the pursuit of our mission.</p>
+
+        <button type="button">设置 / 更换姓名</button>
+    </main>
+    <!-- 放在内容之后，让脚本执行时能找到前面的元素。 -->
+    <script src="scripts/main.js"></script>
 </body>
-
-<button>Change user</button>
-<script src="scripts/main.js"></script>
 
 </html>
