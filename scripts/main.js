@@ -99,3 +99,60 @@ nameForm.addEventListener("submit", (event) => {
 });
 
 
+const learningForm = document.querySelector("#learning-form");
+const learningInput = document.querySelector("#learning-input");
+const learningList = document.querySelector("#learning-list");
+const learningMessage = document.querySelector("#learning-message");
+
+const learningPlans = [];
+
+function renderLearningPlans() {
+    learningList.replaceChildren();
+
+    learningPlans.forEach((plan, index) => {
+        const item = document.createElement("li");
+        const text = document.createElement("span");
+        text.textContent = plan;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.textContent = "删除";
+        deleteButton.className = "delete-button";
+        deleteButton.setAttribute("aria-label", `删除计划${plan}`);
+
+        deleteButton.addEventListener("click", () => {
+            learningPlans.splice(index, 1);
+
+            renderLearningPlans();
+
+            learningMessage.textContent = `已删除计划：${plan}`;
+            learningInput.focus();
+        });
+
+        item.append(text, deleteButton);
+        learningList.append(item);
+    });
+}
+
+learningForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const learningText = learningInput.value.trim();
+
+    if (learningText === "") {
+        learningMessage.textContent = "请输入具体的学习内容。";
+        learningInput.focus();
+        return;
+    }
+
+    learningPlans.push(learningText);
+
+    renderLearningPlans();
+
+    learningInput.value = "";
+    learningInput.focus();
+
+    learningMessage.textContent = "已添加一项学习任务。";
+});
+
+renderLearningPlans();

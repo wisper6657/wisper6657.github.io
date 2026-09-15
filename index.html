@@ -10,12 +10,25 @@
 </head>
 
 <body>
+    <section aria-labelledby="learning-title">
+        <h2 id="learning-title">我的学习计划</h2>
+        <form id="learning-form">
+            <label for="learning-input">想学习什么呢？</label>
+
+            <input type="text" id="learning-input" name="learning" placeholder="例如：练习 CSS 盒模型" maxlength="100"
+                required />
+            <button type="submit">添加计划</button>
+        </form>
+        <p id="learning-message" aria-live="polite"></p>
+
+        <ul id="learning-list"></ul>
+    </section>
     <!-- main 表示本页的主要内容；标签负责描述内容的含义。 -->
     <main>
         <!--src(源)属性，包含嵌入图片的路径-->
         <!--alt属性，用于当图像不能被用户看见时显示-->
         <h1>欢迎来到我的第一个网页</h1>
-        <button type="button" id="image-switcher" aria-lable="切换图片">
+        <button type="button" id="image-switcher" aria-label="切换图片">
             <img id="brand-image" src="images/google.png" alt="Google 标志" />
         </button>
         <p>这是一个段落</p>
